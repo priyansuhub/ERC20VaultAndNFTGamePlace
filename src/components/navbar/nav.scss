@@ -1,0 +1,57 @@
+.navCont {
+  flex: 1;
+  background-color: #9fd8af;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  box-shadow: 0px 2px 26px 3px rgba(0, 0, 0, 0.25);
+  .name {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    h4 {
+      display: flex;
+      align-items: center;
+      width: 70%;
+      height: 60%;
+      padding-left: 54px;
+      font-family: "Roboto Mono", monospace;
+      font-size: 20px;
+      font-weight: 200;
+    }
+  }
+  .socials {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icons {
+      width: 40px;
+      height: 35px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .personal {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    .circle {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+      width: 40px;
+      height: 40px;
+      border-radius: 22.5px;
+      background-color: gold;
+      border: 5px solid #d8b70a;
+    }
+    .circle.login {
+      background-color: beige;
+      border: 5px solid #064420;
+    }
+  }
+}
