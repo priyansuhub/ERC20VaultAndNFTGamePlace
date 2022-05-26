@@ -11,8 +11,15 @@ const NavBar = () => {
   return (
     <div className="navCont">
       <div className="name">
-        <h4>Priyansu Rath</h4>
+        <NavLink to="/home">
+          <motion.a
+            whileHover={{ scale: 1.1, fontWeight: "800", color: "#EE8572" }}
+          >
+            Priyansu Rath
+          </motion.a>
+        </NavLink>
       </div>
+
       <div className="socials">
         <GitHubIcon className="icons" />
         <TwitterIcon className="icons" />

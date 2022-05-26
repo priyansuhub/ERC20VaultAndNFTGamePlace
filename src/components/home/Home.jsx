@@ -39,15 +39,16 @@ const Home = () => {
               NFT Game
             </motion.button>
           </NavLink>
-
-          <motion.button
-            animate={{ scale: 1.0 }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", damping: 3 }}
-          >
-            View Market
-          </motion.button>
+          <NavLink to="/store">
+            <motion.button
+              animate={{ scale: 1.0 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", damping: 3 }}
+            >
+              View Market
+            </motion.button>
+          </NavLink>
         </motion.div>
       </div>
     </div>
