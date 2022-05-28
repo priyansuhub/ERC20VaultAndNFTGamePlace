@@ -1,5 +1,10 @@
 .pcContainer {
-  background-color: gold;
+  background-color: #a3da8d;
+  border: 5px solid #3f3d56;
   min-width: 10rem;
   height: 10rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

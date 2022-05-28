@@ -1,7 +1,11 @@
 import React from "react";
 import "./pc.scss";
-const Pc = () => {
-  return <div className="pcContainer"></div>;
+const Pc = (props) => {
+  return (
+    <div className="pcContainer">
+      <h1>{props.id}</h1>
+    </div>
+  );
 };
 
 export default Pc;

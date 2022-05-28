@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { Obj } from "../../context/ConnectMetamask";
 import NavBar from "../navbar/NavBar";
 import Jhula from "./jhula.svg";
 import "./game.scss";
 import { motion } from "framer-motion";
+import { ContractContext } from "../../context/ContractContext";
+
 const Game = () => {
+  const { contract } = useContext(ContractContext);
+  const { account, connectMetamask, changeAccount } = useContext(Obj);
+  window.ethereum.on("accountsChanged", changeAccount);
+
+  async function True() {
+    await contract.methods
+      .playGuessGame(true)
+      .send({ from: "0x6Ad408cF564e4e282968b4c1A1DC83f606D4156B" });
+    const val = await contract.events.ShowData();
+    console.log(val);
+  }
+  async function False() {
+    await contract.methods
+      .playGuessGame(false)
+      .send({ from: "0x6Ad408cF564e4e282968b4c1A1DC83f606D4156B" });
+    const val = await contract.events.ShowData();
+    console.log(val);
+  }
+
   return (
     <div className="gameContainer">
       <NavBar />
@@ -22,6 +44,7 @@ const Game = () => {
                 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", damping: 3 }}
+                onClick={True}
               >
                 True
               </motion.button>
@@ -35,6 +58,7 @@ const Game = () => {
                 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", damping: 3 }}
+                onClick={False}
               >
                 False
               </motion.button>

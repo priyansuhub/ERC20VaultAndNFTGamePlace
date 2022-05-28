@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./login.scss";
 import SvgDoughNut from "./doughnut.svg";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-
+import { Obj } from "../../context/ConnectMetamask";
 const Login = () => {
+  const { account, connectMetamask, changeAccount } = useContext(Obj);
+  window.ethereum.on("accountsChanged", changeAccount);
   return (
     <div className="login">
       <motion.div
@@ -13,7 +15,13 @@ const Login = () => {
         initial={{ opacity: 0.0 }}
         transition={{ type: "tween", duration: 0.5 }}
       >
-        <h2>Your account is: </h2>
+        <div className="text">
+          <NavLink to="/home">
+            <motion.a whileHover={{ scale: 0.9 }} whileTap={{ scale: 1 }}>
+              Your account is:{account}
+            </motion.a>
+          </NavLink>
+        </div>
       </motion.div>
       <div className="mainLoginCont">
         <div className="btnMain">
@@ -21,6 +29,7 @@ const Login = () => {
             className="btn"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
+            onClick={connectMetamask}
           >
             Connect
           </motion.button>

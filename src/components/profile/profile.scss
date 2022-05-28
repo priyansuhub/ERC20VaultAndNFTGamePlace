@@ -16,7 +16,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: aqua;
+
       width: 40rem;
       height: 20rem;
       margin-bottom: 16rem;
@@ -53,6 +53,16 @@
 
       display: flex;
       justify-content: flex-end;
+    }
+    .floating {
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      background-color: gold;
+      border: 7px solid orange;
+      border-radius: 40px;
+      left: 45.5rem;
+      top: 6rem;
     }
   }
 }
